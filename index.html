@@ -182,31 +182,36 @@
                 <button class="btn btn-primary">Сохранить</button>
             </form>
 
-            <h3>Партнеры</h3>
-            <form action="/api/admin/info/main" method="POST">
-                <div class="grid grid-2">
-                    <label>
-                        <span class="caption">Логотип</span><br />
-                        <input required class="form-control" type="file" name="logo" id="logo"
-                            accept="application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,image/jpg,image/jpeg,image/png">
-                    </label>
+            <div class="row">
+                <div class="col">
+                    <h3>Партнеры</h3>
+                    <form action="/api/admin/info/main" method="POST">
+                        <div class="grid">
+                            <label>
+                                <span class="caption">Логотип</span><br />
+                                <input required class="form-control" type="file" name="logo" id="logo"
+                                    accept="application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,image/jpg,image/jpeg,image/png">
+                            </label>
+                        </div>
+                        <br />
+                        <button class="btn btn-primary">Сохранить</button>
+                    </form>
                 </div>
-                <br />
-                <button class="btn btn-primary">Сохранить</button>
-            </form>
-
-            <h3>Изображения в&nbsp;карусели</h3>
-            <form action="/api/admin/info/main" method="POST">
-                <div class="grid grid-2">
-                    <label>
-                        <span class="caption">Изображение</span><br />
-                        <input required class="form-control" type="file" name="logo" id="logo"
-                            accept="image/jpg,image/jpeg,image/png,image/webp">
-                    </label>
+                <div class="col">
+                    <h3>Изображения в&nbsp;карусели</h3>
+                    <form action="/api/admin/info/main" method="POST">
+                        <div class="grid">
+                            <label>
+                                <span class="caption">Изображение</span><br />
+                                <input required class="form-control" type="file" name="logo" id="logo"
+                                    accept="image/jpg,image/jpeg,image/png,image/webp">
+                            </label>
+                        </div>
+                        <br />
+                        <button class="btn btn-primary">Сохранить</button>
+                    </form>
                 </div>
-                <br />
-                <button class="btn btn-primary">Сохранить</button>
-            </form>
+            </div>
 
             <h3>Молодые специалисты</h3>
             <form action="/api/admin/info/main" method="POST">
@@ -260,7 +265,7 @@
                         <span class="caption">Описание</span><br />
                         <input required class="form-control" type="text" name="caption" id="caption">
                     </label>
-                    <label>
+                    <label style="grid-column: 1/3;">
                         <span class="caption">Функции</span><br />
                         <textarea required class="form-control" name="functions" id="functions"></textarea>
                     </label>
