@@ -28,6 +28,11 @@
         label {
             width: 100%;
         }
+
+        textarea.form-control {
+            border: 1px solid rgb(100, 130, 200);
+            min-width: 300px;
+        }
     </style>
 
     <section class="form">
@@ -62,7 +67,7 @@
                 </label>
                 <br />
                 <h4>Сроки подачи документов</h4>
-                <div class="grid grid-2">
+                <div class="grid grid-2 m-grid-1">
                     <label>
                         <span class="caption">[Бюджет] Очная форма обучения:</span><br />
                         <input class="form-control" type="text" name="caption" id="caption"
@@ -85,7 +90,7 @@
                     </label>
                 </div>
                 <h4>Период сдачи вступительных испытаний</h4>
-                <div class="grid grid-2">
+                <div class="grid grid-2 m-grid-1">
                     <label>
                         <span class="caption">[Контракт] Очная форма обучения:</span><br />
                         <input class="form-control" type="text" name="caption" id="caption"
@@ -113,7 +118,7 @@
             <br />
             <h3>Контактные данные</h3>
             <form action="/api/admin/info/main" method="POST">
-                <div class="grid grid-2">
+                <div class="grid grid-2 m-grid-1">
                     <label>
                         <span class="caption">Контактный номер телефона:</span><br />
                         <input class="form-control" type="tel" name="contact-phone" id="contact-phone" />
@@ -150,7 +155,7 @@
             <br />
             <h3>Часто задаваемые вопросы</h3>
             <form action="/api/admin/info/main" method="POST">
-                <div class="grid grid-2">
+                <div class="grid grid-2 m-grid-1">
                     <label>
                         <span class="caption">Вопрос</span><br />
                         <input required class="form-control" type="text" name="question" id="question">
@@ -166,7 +171,7 @@
             <br />
             <h3>Документы</h3>
             <form action="/api/admin/info/main" method="POST">
-                <div class="grid grid-2">
+                <div class="grid grid-2 m-grid-1">
                     <label>
                         <span class="caption">Документ</span><br />
                         <input required class="form-control" type="file" name="doc" id="doc"
@@ -214,7 +219,7 @@
             <br />
             <h3>Молодые специалисты</h3>
             <form action="/api/admin/info/main" method="POST">
-                <div class="grid grid-2">
+                <div class="grid grid-2 m-grid-1">
                     <label>
                         <span class="caption">Видео</span><br />
                         <input required class="form-control" type="file" name="video" id="video"
@@ -239,7 +244,7 @@
             <br />
             <h3>Перечисления</h3>
             <form action="/api/admin/info/main" method="POST">
-                <div class="grid grid-2">
+                <div class="grid grid-2 m-grid-1">
                     <label>
                         <span class="caption">Число</span><br />
                         <input required class="form-control" type="number" name="number" id="number">
@@ -255,7 +260,7 @@
             <br />
             <h3>Специальности</h3>
             <form action="/api/admin/info/main" method="POST">
-                <div class="grid grid-2">
+                <div class="grid grid-2 m-grid-1 mb-3">
                     <label>
                         <span class="caption">Название</span><br />
                         <input required class="form-control" type="text" name="title" id="title">
@@ -264,18 +269,18 @@
                         <span class="caption">Описание</span><br />
                         <input required class="form-control" type="text" name="caption" id="caption">
                     </label>
-                    <label style="grid-column: 1/3;">
-                        <span class="caption">Функции</span><br />
-                        <textarea required class="form-control" name="functions" id="functions"></textarea>
-                    </label>
                 </div>
+                <label>
+                    <span class="caption">Функции</span><br />
+                    <textarea required class="form-control" name="functions" id="functions"></textarea>
+                </label>
                 <br />
                 <button class="btn btn-primary">Сохранить</button>
             </form>
             <br />
             <h3>Известные выпускники</h3>
             <form action="/api/admin/info/main" method="POST">
-                <div class="grid grid-2">
+                <div class="grid grid-2 m-grid-1">
                     <label>
                         <span class="caption">Фотография</span><br />
                         <input required class="form-control" type="file" name="photo" id="photo"
