@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="global.css" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        section.form {
+            padding: 2em 0;
+        }
+
+        a:link {
+            color: var(--blue);
+        }
+
+        a:link:hover {
+            text-decoration: underline;
+        }
+
+        label.w-100 {
+            width: 100%;
+        }
+    </style>
+
+    <section class="form">
+        <div class="white-block">
+            <h2 class="no-top-margin">Панель администрирования сайта УралЭНИН</h2>
+            <p>
+                Добро пожаловать, { user.fullname }!
+                <a href="/admin-panel/logout">Выйти</a>
+            </p>
+            <h3>Основная информация о сайте</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <label class="w-100">
+                    <span class="caption">Заголовок в промо-блоке:</span><br />
+                    <input required class="form-control" type="text" name="title" id="title" placeholder="Заголовок"
+                        value="{info.title}" />
+                </label>
+                <br />
+                <label class="w-100">
+                    <span class="caption">Сопровождающий текст:</span><br />
+                    <input required class="form-control" type="text" name="caption" id="caption"
+                        placeholder="Сопровождающий текст" value="{info.caption}" />
+                </label>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+            <br />
+            <h3>Информация о поступлении</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <label class="w-100">
+                    <span class="caption">Заголовок:</span><br />
+                    <input class="form-control" type="text" name="title" id="title" placeholder="Заголовок" />
+                </label>
+                <br />
+                <h4>Сроки подачи документов</h4>
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">[Бюджет] Очная форма обучения:</span><br />
+                        <input class="form-control" type="text" name="caption" id="caption"
+                            placeholder="20.06 - 08.08" />
+                    </label>
+                    <label>
+                        <span class="caption">[Бюджет] Очно-заочная и заочная формы обучения:</span><br />
+                        <input class="form-control" type="text" name="caption" id="caption"
+                            placeholder="20.06 - 08.08" />
+                    </label>
+                    <label>
+                        <span class="caption">[Бюджет] Очная форма обучения:</span><br />
+                        <input class="form-control" type="text" name="caption" id="caption"
+                            placeholder="20.06 - 08.08" />
+                    </label>
+                    <label>
+                        <span class="caption">[Бюджет] Очно-заочная и заочная формы обучения:</span><br />
+                        <input class="form-control" type="text" name="caption" id="caption"
+                            placeholder="20.06 - 08.08" />
+                    </label>
+                </div>
+                <h4>Период сдачи вступительных испытаний</h4>
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">[Контракт] Очная форма обучения:</span><br />
+                        <input class="form-control" type="text" name="caption" id="caption"
+                            placeholder="20.06 - 08.08" />
+                    </label>
+                    <label>
+                        <span class="caption">[Контракт] Очно-заочная и заочная формы обучения:</span><br />
+                        <input class="form-control" type="text" name="caption" id="caption"
+                            placeholder="20.06 - 08.08" />
+                    </label>
+                    <label>
+                        <span class="caption">[Контракт] Очная форма обучения:</span><br />
+                        <input class="form-control" type="text" name="caption" id="caption"
+                            placeholder="20.06 - 08.08" />
+                    </label>
+                    <label>
+                        <span class="caption">[Контракт] Очно-заочная и заочная формы обучения:</span><br />
+                        <input class="form-control" type="text" name="caption" id="caption"
+                            placeholder="20.06 - 08.08" />
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+            <h3>Контактные данные</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">Контактный номер телефона:</span><br />
+                        <input class="form-control" type="tel" name="contact-phone" id="contact-phone" />
+                    </label>
+                    <label>
+                        <span class="caption">Контактный адрес электронной почты:</span><br />
+                        <input class="form-control" type="email" name="contact-email" id="contact-email"
+                            placeholder="contact@urfu.ru" />
+                    </label>
+                    <label>
+                        <span class="caption">Дирекция института:</span><br />
+                        <input class="form-control" type="text" name="direction" id="direction"
+                            placeholder="г. Екатеринбург, ул. Софьи Ковалевской, 5" />
+                    </label>
+                    <label>
+                        <span class="caption">Приёмная комиссия:</span><br />
+                        <input class="form-control" type="text" name="priem" id="priem"
+                            placeholder="г. Екатеринбург, ул. Мира, 19" />
+                    </label>
+                    <label>
+                        <span class="caption">Ссылка ВКонтакте:</span><br />
+                        <input class="form-control" type="text" name="vk" id="vk"
+                            placeholder="https://vk.com/ural.federal.university" />
+                    </label>
+                    <label>
+                        <span class="caption">Ссылка Telegram:</span><br />
+                        <input class="form-control" type="text" name="telegram" id="telegram"
+                            placeholder="https://t.me/urfu" />
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+
+            <!-- MY CODE -->
+
+            <h3>Часто задаваемые вопросы</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">Вопрос</span><br />
+                        <input required class="form-control" type="text" name="question" id="question">
+                    </label>
+                    <label>
+                        <span class="caption">Ответ</span><br />
+                        <input required class="form-control" type="text" name="answer" id="answer">
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+
+            <h3>Документы</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">Документ</span><br />
+                        <input style="display: none;" required class="form-control" type="file" name="doc" id="doc"
+                            accept="application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,image/jpg,image/jpeg,image/png">
+                        <button class="btn btn-success" type="button">Выбрать файл</button>
+                    </label>
+                    <label>
+                        <span class="caption">Название</span><br />
+                        <input required class="form-control" type="text" name="title" id="title">
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+
+            <h3>Партнеры</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">Логотип</span><br />
+                        <input style="display: none;" required class="form-control" type="file" name="logo" id="logo"
+                            accept="application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,image/jpg,image/jpeg,image/png">
+                        <button class="btn btn-success" type="button">Выбрать файл</button>
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+
+            <h3>Изображения в&nbsp;карусели</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">Изображение</span><br />
+                        <input required class="form-control" type="file" name="logo" id="logo"
+                            accept="image/jpg,image/jpeg,image/png,image/webp">
+                    </label>
+                    <label>
+                        <span class="caption">Изображение</span><br />
+                        <input required style="display: none;" type="file" name="logo" id="logo"
+                            accept="image/jpg,image/jpeg,image/png,image/webp">
+                        <div class="btn btn-success" tabindex="0" role="button">Выбрать файл</div>
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+
+            <h3>Молодые специалисты</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">Видео</span><br />
+                        <input style="display: none;" required class="form-control" type="file" name="video" id="video"
+                            accept="video/mp4,video/quicktime">
+                        <button class="btn btn-success" type="button">Выбрать файл</button>
+                    </label>
+                    <label>
+                        <span class="caption">Имя</span><br />
+                        <input required class="form-control" type="text" name="name" id="name">
+                    </label>
+                    <label>
+                        <span class="caption">Позиция</span><br />
+                        <input required class="form-control" type="text" name="position" id="position">
+                    </label>
+                    <label>
+                        <span class="caption">Подпись</span><br />
+                        <input required class="form-control" type="text" name="caption" id="caption">
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+
+            <h3>Перечисления</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">Число</span><br />
+                        <input required class="form-control" type="number" name="number" id="number">
+                    </label>
+                    <label>
+                        <span class="caption">Описание</span><br />
+                        <input required class="form-control" type="text" name="caption" id="caption">
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+
+            <h3>Специальности</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">Название</span><br />
+                        <input required class="form-control" type="text" name="title" id="title">
+                    </label>
+                    <label>
+                        <span class="caption">Описание</span><br />
+                        <input required class="form-control" type="text" name="caption" id="caption">
+                    </label>
+                    <label>
+                        <span class="caption">Функции</span><br />
+                        <textarea required class="form-control" name="functions" id="functions"></textarea>
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+
+            <h3>Известные выпускники</h3>
+            <form action="/api/admin/info/main" method="POST">
+                <div class="grid grid-2">
+                    <label>
+                        <span class="caption">Фотография</span><br />
+                        <input style="display: none;" required class="form-control" type="file" name="photo" id="photo"
+                            accept="image/jpg,image/jpeg,image/png">
+                        <button class="btn btn-success" type="button">Выбрать файл</button>
+                    </label>
+                    <label>
+                        <span class="caption">Имя</span><br />
+                        <input required class="form-control" type="text" name="name" id="name">
+                    </label>
+                    <label>
+                        <span class="caption">Год выпуска</span><br />
+                        <input required class="form-control" type="number" name="year" id="year">
+                    </label>
+                    <label>
+                        <span class="caption">Описание</span><br />
+                        <input required class="form-control" type="text" name="description" id="description">
+                    </label>
+                </div>
+                <br />
+                <button class="btn btn-primary">Сохранить</button>
+            </form>
+
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
